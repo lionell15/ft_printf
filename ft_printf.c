@@ -6,7 +6,14 @@
 /*   By: lespinoz <lespinoz@student.42barcelona.com>+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 18:28:02 by lespinoz          #+#    #+#             */
-/*   Updated: 2022/02/06 18:28:08 by lespinoz         ###   ########.fr       */
+/*   Updated: 2022/02/06 20:32:35 by lionell15        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
+
+int	ft_printf(char *format, ...)
+{
+	printf("%s", format);
+	return (0);
+}
