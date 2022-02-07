@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lespinoz <lespinoz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 14:07:19 by lespinoz          #+#    #+#             */
-/*   Updated: 2022/02/07 14:07:22 by lespinoz         ###   ########.fr       */
+/*   Created: 2022/02/07 14:07:47 by lespinoz          #+#    #+#             */
+/*   Updated: 2022/02/07 14:07:51 by lespinoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef UTILS_H
+# define UTILS_H
 
-# include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "utils/utils.h"
-# include <stdio.h>
 
-typedef struct	s_flags
-{
-	int		star;
-	int		width;
-	int		zero;
-	int		minus;
-	int		type;
-	int		dot;
-}t_flags;
-
-int	ft_printf(const char *format, ...);
+size_t	ft_strlen(const char *s);
+char	*ft_strdup(const char *s1);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	ft_putchar_fd(char c);
 
 #endif

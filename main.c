@@ -2,7 +2,6 @@
 
 int main(void)
 {
-	printf("printf function.\n");
-	ft_printf("ft_function\n");
+	ft_printf("test printf %s\n");
 	return (0);
 }

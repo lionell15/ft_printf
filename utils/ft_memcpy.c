@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lespinoz <lespinoz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 14:07:19 by lespinoz          #+#    #+#             */
-/*   Updated: 2022/02/07 14:07:22 by lespinoz         ###   ########.fr       */
+/*   Created: 2022/01/14 19:24:27 by lespinoz          #+#    #+#             */
+/*   Updated: 2022/01/14 19:24:31 by lespinoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "utils.h"
 
-# include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "utils/utils.h"
-# include <stdio.h>
-
-typedef struct	s_flags
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int		star;
-	int		width;
-	int		zero;
-	int		minus;
-	int		type;
-	int		dot;
-}t_flags;
+	size_t	index;
 
-int	ft_printf(const char *format, ...);
-
-#endif
+	if (!dst && !src)
+		return (0);
+	index = 0;
+	while (index < n)
+	{
+		((unsigned char *)dst)[index] = ((unsigned char *)src)[index];
+		index++;
+	}
+	return (dst);
+}

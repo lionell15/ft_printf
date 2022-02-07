@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lespinoz <lespinoz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 14:07:19 by lespinoz          #+#    #+#             */
-/*   Updated: 2022/02/07 14:07:22 by lespinoz         ###   ########.fr       */
+/*   Created: 2022/01/14 14:46:31 by lespinoz          #+#    #+#             */
+/*   Updated: 2022/01/14 14:47:03 by lespinoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "utils.h"
 
-# include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "utils/utils.h"
-# include <stdio.h>
-
-typedef struct	s_flags
+size_t	ft_strlen(const char *s)
 {
-	int		star;
-	int		width;
-	int		zero;
-	int		minus;
-	int		type;
-	int		dot;
-}t_flags;
+	size_t	len;
 
-int	ft_printf(const char *format, ...);
-
-#endif
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
+}

@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lespinoz <lespinoz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 14:07:19 by lespinoz          #+#    #+#             */
-/*   Updated: 2022/02/07 14:07:22 by lespinoz         ###   ########.fr       */
+/*   Created: 2022/01/17 17:07:08 by lespinoz          #+#    #+#             */
+/*   Updated: 2022/01/17 17:07:23 by lespinoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "utils.h"
 
-# include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "utils/utils.h"
-# include <stdio.h>
-
-typedef struct	s_flags
+char	*ft_strdup(const char *s1)
 {
-	int		star;
-	int		width;
-	int		zero;
-	int		minus;
-	int		type;
-	int		dot;
-}t_flags;
+	char	*s2;
 
-int	ft_printf(const char *format, ...);
-
-#endif
+	s2 = (char *)malloc(ft_strlen(s1) + 1);
+	if (!s2)
+		return (0);
+	ft_memcpy(s2, s1, ft_strlen(s1) + 1);
+	return (s2);
+}
