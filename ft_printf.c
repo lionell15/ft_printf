@@ -6,7 +6,7 @@
 /*   By: lespinoz <lespinoz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 14:06:34 by lespinoz          #+#    #+#             */
-/*   Updated: 2022/02/07 14:06:42 by lespinoz         ###   ########.fr       */
+/*   Updated: 2022/02/07 20:40:56 by lionell15        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static t_flags	ft_init_flags(void)
 	return (flags);
 }
 
-satic int	ft_parse(const char * format, int index, t_flags *flags, va_list arguments)
+static int	ft_parse(const char * format, int index, t_flags *flags, va_list arguments)
 {
 	while (format[index] != '\0')
 	{
@@ -43,7 +43,7 @@ satic int	ft_parse(const char * format, int index, t_flags *flags, va_list argum
 			*flags = ft_isdigit_flag(format[index], *flags);
 		if (ft_isconversion(format[index]))
 		{
-			*flags->type = format[index];
+			flags->type = format[index];
 			break;
 		}
 		index++;
@@ -68,8 +68,8 @@ static int	ft_check_input(const char *format, va_list arguments)
 			count += ft_putchar(format[index]);
 		else if (format[index] == '%' && format[index + 1])
 		{
-			index = ft_parse(format, ++i, &flags, arguments);
-			if ft_isconversion(format[index])
+			index = ft_parse(format, ++index, &flags, arguments);
+			if (ft_isconversion(format[index]))
 				count += ft_handle((char)flags.type, flags, arguments);
 			else if (format[index])
 				count += ft_putchar(format[index]);
