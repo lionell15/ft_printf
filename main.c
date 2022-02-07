@@ -2,6 +2,6 @@
 
 int main(void)
 {
-	ft_printf("test printf %s\n");
+	ft_printf("test printf %s y sigue\n");
 	return (0);
 }

@@ -19,6 +19,6 @@
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
-void	ft_putchar_fd(char c);
+int		ft_putchar(char c);
 
 #endif

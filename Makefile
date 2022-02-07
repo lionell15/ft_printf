@@ -3,7 +3,8 @@ NAME	=	libftprintf.a
 SRCS	= 	ft_printf.c \
 			utils/ft_strlen.c \
 			utils/ft_memcpy.c \
-			utils/ft_strdup.c
+			utils/ft_strdup.c \
+			utils/ft_putchar.c
 CC		= 	gcc
 RM		= 	rm -f
 LIBC	= 	ar -rcs

@@ -12,6 +12,45 @@
 
 #include "ft_printf.h"
 
+static t_flags	ft_init_flags(void)
+{
+	t_flags	flags;
+
+	flags.width = 0;
+	flags.star = 0;
+	flags.type = 0;
+	flags.minus = 0;
+	flags.zero = 0;
+	flags.dot = -1;
+	return (flags);
+}
+
+satic int	ft_parse(const char * format, int index, t_flags *flags, va_list arguments)
+{
+	while (format[index] != '\0')
+	{
+		if (! ft_isconversion(format[index]) && !ft_isflag(format[index]) && !ft_isdigit(format[index]))
+			break;
+		if (format[index] == '0' && flags->width == 0 && flags->minus == 0)
+			flags->zero = 1;
+		if (format[index] == '*')
+			*flags = ft_width_flag(arguments, *flags);
+		if (format[index] == '.')
+			index = ft_dot_flag(format, index, flags, arguments);
+		if (format[index] == '-')
+			*flags = ft_minus_flag(*flags);
+		if (ft_isdigit(format[index]))
+			*flags = ft_isdigit_flag(format[index], *flags);
+		if (ft_isconversion(format[index]))
+		{
+			*flags->type = format[index];
+			break;
+		}
+		index++;
+	}
+	return (index);
+}
+
 static int	ft_check_input(const char *format, va_list arguments)
 {
 	int	index;
@@ -22,9 +61,9 @@ static int	ft_check_input(const char *format, va_list arguments)
 	count = 0;
 	if (!format)
 		return (0);
-	while (format[index] != NULL)
+	while (format[index] != '\0')
 	{
-		flags = ft_initialize();
+		flags = ft_init_flags();
 		if (format[index] != '%')
 			count += ft_putchar(format[index]);
 		else if (format[index] == '%' && format[index + 1])
@@ -52,7 +91,6 @@ int	ft_printf(const char *format, ...)
 	if (!(str_format))
 		return (0);
 	va_start(arguments, format);
-	printf("format:%s", str_format);
 	characters += ft_check_input(str_format, arguments);
 	va_end(arguments);
 	free((char *)str_format);
