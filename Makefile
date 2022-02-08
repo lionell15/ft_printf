@@ -1,6 +1,8 @@
 NAME	=	libftprintf.a
 
 SRCS	= 	ft_printf.c \
+			ft_handle.c \
+			ft_handle_flags.c \
 			utils/ft_strlen.c \
 			utils/ft_memcpy.c \
 			utils/ft_strdup.c \

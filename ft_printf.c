@@ -6,7 +6,7 @@
 /*   By: lespinoz <lespinoz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 14:06:34 by lespinoz          #+#    #+#             */
-/*   Updated: 2022/02/07 20:40:56 by lionell15        ###   ########.fr       */
+/*   Updated: 2022/02/08 14:35:08 by lespinoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ static t_flags	ft_init_flags(void)
 	return (flags);
 }
 
-static int	ft_parse(const char * format, int index, t_flags *flags, va_list arguments)
+static int	ft_parse(const char *format, int index,
+		t_flags *flags, va_list arguments)
 {
 	while (format[index] != '\0')
 	{
-		if (! ft_isconversion(format[index]) && !ft_isflag(format[index]) && !ft_isdigit(format[index]))
-			break;
+		if (! ft_isconversion(format[index]) && !ft_isflag(format[index])
+			&& !ft_isdigit(format[index]))
+			break ;
 		if (format[index] == '0' && flags->width == 0 && flags->minus == 0)
 			flags->zero = 1;
 		if (format[index] == '*')
@@ -40,11 +42,11 @@ static int	ft_parse(const char * format, int index, t_flags *flags, va_list argu
 		if (format[index] == '-')
 			*flags = ft_minus_flag(*flags);
 		if (ft_isdigit(format[index]))
-			*flags = ft_isdigit_flag(format[index], *flags);
+			*flags = ft_digit_flag(format[index], *flags);
 		if (ft_isconversion(format[index]))
 		{
 			flags->type = format[index];
-			break;
+			break ;
 		}
 		index++;
 	}
@@ -53,9 +55,9 @@ static int	ft_parse(const char * format, int index, t_flags *flags, va_list argu
 
 static int	ft_check_input(const char *format, va_list arguments)
 {
-	int	index;
-	int count;
-	t_flags flags;
+	int		index;
+	int		count;
+	t_flags	flags;
 
 	index = 0;
 	count = 0;
@@ -77,7 +79,6 @@ static int	ft_check_input(const char *format, va_list arguments)
 		index++;
 	}
 	return (count);
-
 }
 
 int	ft_printf(const char *format, ...)

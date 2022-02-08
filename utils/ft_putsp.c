@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putsp.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lespinoz <lespinoz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 14:39:27 by lespinoz          #+#    #+#             */
-/*   Updated: 2022/02/08 14:39:40 by lespinoz         ###   ########.fr       */
+/*   Created: 2022/02/08 13:21:24 by lespinoz          #+#    #+#             */
+/*   Updated: 2022/02/08 13:21:52 by lespinoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "utils.h"
 
-int	main(void)
+int	ft_putsp(char *str, int precision)
 {
-	ft_printf("012345%s8\n");
-	return (0);
+	int	i;
+
+	i = 0;
+	while (str[i] && i < precision)
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	return (i);
 }

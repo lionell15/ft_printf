@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lespinoz <lespinoz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 14:39:27 by lespinoz          #+#    #+#             */
-/*   Updated: 2022/02/08 14:39:40 by lespinoz         ###   ########.fr       */
+/*   Created: 2022/02/08 13:22:03 by lespinoz          #+#    #+#             */
+/*   Updated: 2022/02/08 13:22:37 by lespinoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "utils.h"
 
-int	main(void)
+int	ft_tolower(int c)
 {
-	ft_printf("012345%s8\n");
-	return (0);
+	if (c >= 65 && c <= 90)
+		c = c + 32;
+	return (c);
 }

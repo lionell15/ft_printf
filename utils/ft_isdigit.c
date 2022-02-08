@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lespinoz <lespinoz@student.42barcel>       +#+  +:+       +#+        */
+/*   By: lespinoz <lespinoz@student.42barcelona.com>+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 14:39:27 by lespinoz          #+#    #+#             */
-/*   Updated: 2022/02/08 14:39:40 by lespinoz         ###   ########.fr       */
+/*   Created: 2022/02/08 13:15:54 by lespinoz          #+#    #+#             */
+/*   Updated: 2022/02/08 13:17:14 by lespinoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "utils.h"
 
-int	main(void)
+int	ft_isdigit(int c)
 {
-	ft_printf("012345%s8\n");
+	if (c >= 48 && c <= 57)
+		return (1);
 	return (0);
 }

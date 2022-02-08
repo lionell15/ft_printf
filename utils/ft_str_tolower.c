@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_str_tolower.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lespinoz <lespinoz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 14:39:27 by lespinoz          #+#    #+#             */
-/*   Updated: 2022/02/08 14:39:40 by lespinoz         ###   ########.fr       */
+/*   Created: 2022/02/08 13:22:47 by lespinoz          #+#    #+#             */
+/*   Updated: 2022/02/08 13:23:09 by lespinoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "utils.h"
 
-int	main(void)
+char	*ft_str_tolower(char *str)
 {
-	ft_printf("012345%s8\n");
-	return (0);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		str[i] = ft_tolower(str[i]);
+		i++;
+	}
+	return (str);
 }
