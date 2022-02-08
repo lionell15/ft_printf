@@ -71,7 +71,7 @@ char	*ft_u_itoa(unsigned int n)
 	length = ft_intlen(num);
 	nc = 0;
 	neg = 0;
-	nc = ft_generate(nc, num, legth, neg);
+	nc = ft_generate(nc, num, length, neg);
 	if (!nc)
 		return (0);
 	return (nc);

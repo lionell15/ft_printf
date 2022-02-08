@@ -1,12 +1,22 @@
 NAME	=	libftprintf.a
 
 SRCS	= 	ft_printf.c \
-			ft_handle.c \
-			ft_handle_flags.c \
+			src/ft_handle.c \
+			src/ft_handle_flags.c \
+			src/ft_handle_char.c \
+			src/ft_handle_percent.c \
+			utils/ft_isdigit.c \
+			utils/ft_itoa.c \
+			utils/ft_memcpy.c \
 			utils/ft_strlen.c \
 			utils/ft_memcpy.c \
 			utils/ft_strdup.c \
-			utils/ft_putchar.c
+			utils/ft_putchar.c \
+			utils/ft_putsp.c \
+			utils/ft_str_tolower.c \
+			utils/ft_u_itoa.c \
+			utils/ft_utl_base.c
+
 CC		= 	gcc
 RM		= 	rm -f
 LIBC	= 	ar -rcs
