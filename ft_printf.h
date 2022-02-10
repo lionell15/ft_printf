@@ -21,5 +21,7 @@
 int		ft_printf(const char *format, ...);
 int		ft_print_char(const char c, int count);
 int 	ft_print_str(const char *str, int count);
+int		ft_print_digits(int n, int count);
+int		ft_print_pointers(void *ptr, int count);
 
 #endif

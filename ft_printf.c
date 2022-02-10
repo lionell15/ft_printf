@@ -20,6 +20,11 @@ static int	ft_handle(const char c, va_list arguments, int count)
 		count = ft_print_char(va_arg(arguments, int), count);
 	else if (c == 's')
 		count = ft_print_str(va_arg(arguments, char *), count);
+	else if (c == 'i' || c == 'd')
+		count = ft_print_digits(va_arg(arguments, int), count);
+	else if (c == 'p')
+		count = ft_print_pointers(va_arg(arguments, void *), count);
+
 	return(count);
 }
 

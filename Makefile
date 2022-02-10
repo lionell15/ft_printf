@@ -3,6 +3,8 @@ NAME	=	libftprintf.a
 SRCS	= 	ft_printf.c \
 			src/ft_print_char.c \
 			src/ft_print_str.c \
+			src/ft_print_digits.c \
+			src/ft_print_pointers.c \
 			utils/ft_isdigit.c \
 			utils/ft_itoa.c \
 			utils/ft_memcpy.c \
