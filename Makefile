@@ -1,10 +1,8 @@
 NAME	=	libftprintf.a
 
 SRCS	= 	ft_printf.c \
-			src/ft_handle.c \
-			src/ft_handle_flags.c \
-			src/ft_handle_char.c \
-			src/ft_handle_percent.c \
+			src/ft_print_char.c \
+			src/ft_print_str.c \
 			utils/ft_isdigit.c \
 			utils/ft_itoa.c \
 			utils/ft_memcpy.c \

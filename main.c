@@ -11,9 +11,11 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int	main(void)
 {
-	ft_printf("el numero %% va detras del %c \n", 'l');
+	ft_printf("myfunction: NULL %s NULL ", NULL);
+	printf("ft_original: NULL %s NULL ", NULL);
 	return (0);
 }
