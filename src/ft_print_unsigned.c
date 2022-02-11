@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_print_unsigned.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lespinoz <lespinoz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 13:22:03 by lespinoz          #+#    #+#             */
-/*   Updated: 2022/02/08 13:22:37 by lespinoz         ###   ########.fr       */
+/*   Created: 2022/02/11 13:21:37 by lespinoz          #+#    #+#             */
+/*   Updated: 2022/02/11 13:21:58 by lespinoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "../ft_printf.h"
 
-int	ft_tolower(int c)
+int	ft_print_unsigned(unsigned int n, int count)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	return (c);
+	if (n > 9)
+		count = ft_print_unsigned(n / 10, count);
+	count = ft_print_char (n % 10 + '0', count);
+	return (count);
 }

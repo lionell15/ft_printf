@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_print_hexa_up.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lespinoz <lespinoz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 14:39:27 by lespinoz          #+#    #+#             */
-/*   Updated: 2022/02/08 14:39:40 by lespinoz         ###   ########.fr       */
+/*   Created: 2022/02/11 13:18:09 by lespinoz          #+#    #+#             */
+/*   Updated: 2022/02/11 13:18:47 by lespinoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <stdio.h>
+#include "../ft_printf.h"
 
-int	main(void)
+int	ft_print_hexa_up(unsigned int hx, int count)
 {
-	ft_printf("myfunction: NULL %s NULL ", NULL);
-	printf("ft_original: NULL %s NULL ", NULL);
-	return (0);
+	char	*base;
+
+	base = "0123456789ABCDEF";
+	if (hx > 15)
+		count = ft_print_hexa_up(hx / 16, count);
+	count = ft_print_char(base[hx % 16], count);
+	return (count);
 }

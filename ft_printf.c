@@ -12,10 +12,8 @@
 
 #include "ft_printf.h"
 
-
 static int	ft_handle(const char c, va_list arguments, int count)
 {
-
 	if (c == 'c')
 		count = ft_print_char(va_arg(arguments, int), count);
 	else if (c == 's')
@@ -24,20 +22,26 @@ static int	ft_handle(const char c, va_list arguments, int count)
 		count = ft_print_digits(va_arg(arguments, int), count);
 	else if (c == 'p')
 		count = ft_print_pointers(va_arg(arguments, void *), count);
-
-	return(count);
+	else if (c == 'u')
+		count = ft_print_unsigned(va_arg(arguments, unsigned int), count);
+	else if (c == 'x')
+		count = ft_print_hexa_low(va_arg(arguments, long int), count);
+	else if (c == 'X')
+		count = ft_print_hexa_up(va_arg(arguments, long int), count);
+	else if (c == '%')
+		count = ft_print_char('%', count);
+	return (count);
 }
 
 int	ft_printf(const char *format, ...)
 {
 	va_list		arguments;
 	int			characters;
-	int 		index;
+	int			index;
 
 	characters = 0;
 	index = 0;
 	va_start(arguments, format);
-	
 	while (format[index])
 	{
 		if (format[index] == '%')
